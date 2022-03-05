@@ -2,7 +2,7 @@
 1. eureka 注册中心
 2. log-spring-boot-starter 自定义日志切面starter
 3. spring-demo demo应用
-    * 日志 Log4J
+    * 日志 Log4J2
     * json解析  
     * Spring Cloud LoadBalancer
     * 熔断限流 hystrix

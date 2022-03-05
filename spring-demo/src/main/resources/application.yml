@@ -12,3 +12,8 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8300/eureka/
     register-with-eureka: true
+
+logging:
+  config:  classpath:log4j2.xml
+  level:
+    root: INFO
