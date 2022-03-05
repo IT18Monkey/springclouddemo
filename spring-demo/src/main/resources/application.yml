@@ -1,0 +1,14 @@
+server:
+   port: 8090
+spring :
+   application:
+      name: demo
+log:
+  auto:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8300/eureka/
+    register-with-eureka: true
