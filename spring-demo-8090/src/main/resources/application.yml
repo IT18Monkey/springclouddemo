@@ -3,6 +3,11 @@ server:
 spring :
    application:
       name: demo
+   cloud:
+     loadbalancer:
+       ribbon:
+         enabled: false
+
 log:
   auto:
     enabled: true
@@ -11,7 +16,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8300/eureka/
-    register-with-eureka: true
+    enabled: true
+
+
+
 
 logging:
   config:  classpath:log4j2.xml

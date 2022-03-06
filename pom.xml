@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>spring-demo</module>
+    <module>spring-demo-8090</module>
     <module>log-spring-boot-starter</module>
     <module>eureka</module>
   </modules>

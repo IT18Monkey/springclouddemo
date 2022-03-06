@@ -151,15 +151,11 @@
         </Root>
 
         <!--spring日志-->
-        <Logger name="org.springframework" level="debug"/>
+        <Logger name="org.springframework" level="info"/>
         <!--druid数据源日志-->
         <Logger name="druid.sql.Statement" level="warn"/>
         <!-- mybatis日志 -->
         <Logger name="com.mybatis" level="warn"/>
-        <Logger name="org.hibernate" level="warn"/>
-        <Logger name="com.zaxxer.hikari" level="info"/>
-        <Logger name="org.quartz" level="info"/>
-        <Logger name="com.andya.demo" level="debug"/>
     </Loggers>
 
 </Configuration>
