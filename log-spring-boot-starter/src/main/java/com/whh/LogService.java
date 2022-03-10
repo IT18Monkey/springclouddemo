@@ -26,7 +26,7 @@ public class LogService {
     }
 
     @Around(value = "pointcut() && @annotation(autoLog)",argNames = "joinPoint,autoLog")
-    public void advice( ProceedingJoinPoint joinPoint,AutoLog autoLog) {
+    public Object  advice( ProceedingJoinPoint joinPoint,AutoLog autoLog) {
         Object[] args = joinPoint.getArgs();
         if(args!=null&&args.length>0){
             log.info(joinPoint.getSignature().getDeclaringTypeName()+":"+ Arrays.stream(args).map(s->s!=null?s.toString():"").collect(Collectors.joining(",")));
@@ -40,6 +40,7 @@ public class LogService {
             log.error("LogService.advice", throwable);
         }
         log.info(joinPoint.getSignature().getDeclaringTypeName()+":"+result);
+        return result;
     }
 
 }

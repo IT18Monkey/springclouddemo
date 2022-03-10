@@ -1,24 +1,15 @@
 server:
-   port: 8090
+   port: 8080
 spring :
    application:
-      name: spring-demo-8090
-   cloud:
-     loadbalancer:
-       ribbon:
-         enabled: false
-
-log:
-  auto:
-    enabled: true
+      name: gateway
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8300/eureka/
-    enabled: true
-
-
+    register-with-eureka: true  #是否注册到服务中心
+    fetch-registry: true #是否获取注册列表信息
 
 
 logging:

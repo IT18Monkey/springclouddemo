@@ -6,5 +6,5 @@
     * json解析  jackson
     * Spring Cloud LoadBalancer
     * 熔断限流 hystrix
-4. Spring Cloud Gateway
+4. Spring Cloud Gateway  网关
 5. Spring Cloud Sleuth
