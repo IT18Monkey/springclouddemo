@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: netty-demo
+
+websocket:
+  port: 7001
+  url: /ws
+
+logging:
+  config: classpath:log4j2.xml
+  level:
+    root: INFO
