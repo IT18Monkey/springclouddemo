@@ -53,6 +53,9 @@ public class WebsocketChannelInitializer extends ChannelInitializer<SocketChanne
           5. 是通过一个 状态码 101
         */
         pipeline.addLast(new WebSocketServerProtocolHandler(websocketUrl));
+        /**
+         * 心跳检测机制
+         */
         pipeline.addLast(new IdleStateHandler(3, 3, 5, TimeUnit.SECONDS));
         //自定义的handler ，处理业务逻辑
         pipeline.addLast(webSocketHandler);
