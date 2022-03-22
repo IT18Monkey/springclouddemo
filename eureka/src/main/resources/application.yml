@@ -4,9 +4,9 @@ spring:
 server:
   port: 8300
 eureka:
-  server:
-    enable-self-preservation: false #防止由于Eureka的机制导致Client被错误显示在线 仅在开发环境使用
   client:
-    service-url:
-      defaultZone: http://localhost:8300/eureka/ #这便是此eureka server的应用注册地址
-    register-with-eureka: true #显示对server应用的注册
+    serviceUrl:
+      defaultZone: http://localhost:8300/eureka/
+    enabled: true
+    register-with-eureka: false  #是否注册到服务中心
+    fetch-registry: false #是否获取注册列表信息

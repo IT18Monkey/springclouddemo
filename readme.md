@@ -4,13 +4,18 @@
 3. spring-demo demo应用
     * 日志 Log4J2
     * json解析  jackson
-    * Spring Cloud LoadBalancer
-    * 熔断限流 hystrix
-    * 单元测试 SpringBoot Test
-    * Spring Cloud Security
+    * 负载均衡 Spring Cloud LoadBalancer
+    * 单元测试 SpringBoot Test      待实现
+    * 安全认证 Spring Cloud Security 待实现
+    * ORM框架 mybatis-plus    待实现
+    * redis lettuce + Redisson
+    * zookeeper  待实现
 4. Spring Cloud Gateway  网关
-5. 分布式配置中心 Apollo
+    * 熔断 hystrix 待实现
+    * 限流 redisRateLimiter 
+5. 分布式配置中心 Apollo 待实现
 6. websocket服务 netty   
-5. 分布式链路追踪 Spring Cloud Sleuth
-6. 性能测试 Jmeter
-7. CICD  jenkins+Kubernetes  https://blog.csdn.net/Cantevenl/article/details/116722510 https://www.kubernetes.org.cn/2995.html
+5. 分布式链路追踪 Spring Cloud Sleuth 待实现
+6. 搜索服务 Elasticsearch   待实现
+6. 性能测试 Jmeter 待实现
+7. CICD  jenkins+Kubernetes 待实现 https://blog.csdn.net/Cantevenl/article/details/116722510 https://www.kubernetes.org.cn/2995.html
