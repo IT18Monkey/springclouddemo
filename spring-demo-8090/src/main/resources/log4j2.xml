@@ -9,7 +9,7 @@
         <Console name="consoleAppender" target="SYSTEM_OUT">
             <!--设置日志格式及颜色-->
             <PatternLayout
-                    pattern="%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}}{bright,yellow}: %msg%n%style{%throwable}{red}"
+                    pattern="%style{%d{ISO8601}}{bright,green} %highlight{%-5level} traceId:%X{traceId} [%style{%t}{bright,blue}] %style{%C{}}{bright,yellow}: %msg%n%style{%throwable}{red}"
                     disableAnsi="false" noConsoleNoAnsi="false"/>
         </Console>
 
@@ -20,7 +20,7 @@
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/all-%d{yyyy-MM-dd}-%i.log.gz">
             <!--设置日志格式-->
             <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
+                <pattern>%d %p %C{} traceId:%X{traceId}  [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
@@ -143,11 +143,11 @@
         <Root level="debug">
             <AppenderRef ref="allFileAppender" level="all"/>
             <AppenderRef ref="consoleAppender" level="debug"/>
-            <AppenderRef ref="debugFileAppender" level="debug"/>
-            <AppenderRef ref="infoFileAppender" level="info"/>
-            <AppenderRef ref="warnFileAppender" level="warn"/>
-            <AppenderRef ref="errorFileAppender" level="error"/>
-            <AppenderRef ref="errorJsonAppender" level="error"/>
+<!--            <AppenderRef ref="debugFileAppender" level="debug"/>-->
+<!--            <AppenderRef ref="infoFileAppender" level="info"/>-->
+<!--            <AppenderRef ref="warnFileAppender" level="warn"/>-->
+<!--            <AppenderRef ref="errorFileAppender" level="error"/>-->
+<!--            <AppenderRef ref="errorJsonAppender" level="error"/>-->
         </Root>
 
         <!--spring日志-->

@@ -5,9 +5,9 @@
     * 日志 Log4J2
     * json解析  jackson
     * 负载均衡 Spring Cloud LoadBalancer
-    * 单元测试 SpringBoot Test      待实现
+    * 单元测试 SpringBoot Test
     * 安全认证 Spring Cloud Security 待实现
-    * ORM框架 mybatis-plus   
+    * ORM框架 mybatis-plus    https://baomidou.com/pages/24112f/#%E7%89%B9%E6%80%A7
     * redis lettuce + Redisson
     * zookeeper  待实现
 4. Spring Cloud Gateway  网关
