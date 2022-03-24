@@ -10,6 +10,14 @@ spring :
    redis:
      redisson:
        file: classpath:redisson.yaml
+   datasource:
+     driver-class-name: com.mysql.cj.jdbc.Driver
+     url: jdbc:mysql://127.0.0.1:3306/console
+     username: root
+     password: 123456
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.whh.springboot.springdemo.dto
 
 #自定义日志组件
 log:

@@ -7,7 +7,7 @@
     * 负载均衡 Spring Cloud LoadBalancer
     * 单元测试 SpringBoot Test      待实现
     * 安全认证 Spring Cloud Security 待实现
-    * ORM框架 mybatis-plus    待实现
+    * ORM框架 mybatis-plus   
     * redis lettuce + Redisson
     * zookeeper  待实现
 4. Spring Cloud Gateway  网关
