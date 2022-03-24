@@ -1,6 +1,7 @@
 package com.whh.springboot.springdemo.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class RedisLock {
     @Autowired
-    private StringRedisTemplate redisTemplate;
+    private  RedisTemplate<String, Object> redisTemplate;
 
     /**
      *

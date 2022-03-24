@@ -18,7 +18,7 @@ public class RedisLockTest {
     private RedisLock redisLock;
     @Test
     public void tryLock() {
-        String key = "demo";
+        String key = "redisLock";
         redisLock.tryLock(key, 60L, 10L);
         try {
             TimeUnit.SECONDS.sleep(60);

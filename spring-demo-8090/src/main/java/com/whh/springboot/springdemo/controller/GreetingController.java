@@ -2,20 +2,18 @@ package com.whh.springboot.springdemo.controller;
 
 import com.whh.AutoLog;
 import com.whh.springboot.springdemo.domain.Greeting;
+import com.whh.springboot.springdemo.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 @RestController
 public class GreetingController {
-    private static final String template = "Hello, %s!";
-    private AtomicLong counter = new AtomicLong();
+    @Autowired
+    private GreetingService greetingService;
     @Autowired()
     @Qualifier("restTemplate1")
     private RestTemplate restTemplate;
@@ -25,6 +23,7 @@ public class GreetingController {
 
     /**
      * http://localhost:8090/restTemplate
+     *
      * @return
      */
     @RequestMapping("/restTemplate")
@@ -51,8 +50,7 @@ public class GreetingController {
      */
     @RequestMapping("/greeting")
     @AutoLog("")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name, @RequestParam(value = "value", required = false) String value) {
-        return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
+    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return greetingService.greeting(name);
     }
 }
