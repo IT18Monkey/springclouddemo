@@ -42,7 +42,8 @@ eureka:
     enabled: true
     register-with-eureka: true  #是否注册到服务中心
     fetch-registry: true #是否获取注册列表信息
-
+  instance:
+    prefer-ip-address: true
 
 logging:
   config:  classpath:log4j2.xml

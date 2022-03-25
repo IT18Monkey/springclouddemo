@@ -10,3 +10,5 @@ eureka:
     enabled: true
     register-with-eureka: false  #是否注册到服务中心
     fetch-registry: false #是否获取注册列表信息
+  instance:
+    prefer-ip-address: true
