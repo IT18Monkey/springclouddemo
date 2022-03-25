@@ -1,11 +1,14 @@
 package com.whh.config;
 
+import org.springframework.cloud.gateway.filter.GatewayFilterChain;
+import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 @Configuration
@@ -22,7 +25,7 @@ public class RouterConfig {
                 p -> p.path("/demo/**")
                         .filters(gatewayFilterSpec ->
                                 gatewayFilterSpec.rewritePath("/demo/(?<path>.*)", "/${path}")
-                                        .requestRateLimiter(config -> config.setKeyResolver(keyResolver).setRateLimiter(redisRateLimiter))
+//                                        .requestRateLimiter(config -> config.setKeyResolver(keyResolver).setRateLimiter(redisRateLimiter))
                         )
                         .uri("lb://spring-demo-8090")
         )
@@ -36,8 +39,5 @@ public class RouterConfig {
     KeyResolver userKeyResolver() {
         return exchange -> Mono.just(exchange.getRequest().getURI().getHost());
     }
-
-
-
 
 }
