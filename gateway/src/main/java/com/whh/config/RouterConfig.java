@@ -30,7 +30,7 @@ public class RouterConfig {
                         .uri("lb://spring-demo-8090")
         )
                 .route(p -> p.path("/eureka/**")
-                        .filters(gatewayFilterSpec -> gatewayFilterSpec.rewritePath("/eureka/(?<path>.*)", "/${path}"))
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec.stripPrefix(1))
                         .uri("lb://eureka"))
                 .build();
     }
