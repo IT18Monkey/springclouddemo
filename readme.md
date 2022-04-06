@@ -9,7 +9,8 @@
     * ORM框架 mybatis-plus    https://baomidou.com/pages/24112f/#%E7%89%B9%E6%80%A7
     * redis lettuce + Redisson
     * zookeeper  待实现
-    * mq消息  RocketMQ 
+    * mq消息  RocketMQ   待实现
+    * 消息总线Bus+stream 
 4. Spring Cloud Gateway  网关
     * 熔断 hystrix 待实现
     * 限流 redisRateLimiter 

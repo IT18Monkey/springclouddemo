@@ -24,7 +24,7 @@ public class RouterConfig {
         return builder.routes().route("demo",
                 p -> p.path("/demo/**")
                         .filters(gatewayFilterSpec ->
-                                gatewayFilterSpec.rewritePath("/demo/(?<path>.*)", "/${path}")
+                                        gatewayFilterSpec.rewritePath("/demo/(?<path>.*)", "/${path}")
 //                                        .requestRateLimiter(config -> config.setKeyResolver(keyResolver).setRateLimiter(redisRateLimiter))
                         )
                         .uri("lb://spring-demo-8090")
@@ -32,6 +32,9 @@ public class RouterConfig {
                 .route(p -> p.path("/eureka/**")
                         .filters(gatewayFilterSpec -> gatewayFilterSpec.stripPrefix(1))
                         .uri("lb://eureka"))
+                .route(p -> p.path("/auth/**")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec.stripPrefix(1))
+                        .uri("lb://auth-server"))
                 .build();
     }
 
