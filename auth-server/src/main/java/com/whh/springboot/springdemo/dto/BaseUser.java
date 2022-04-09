@@ -12,7 +12,6 @@ public class BaseUser {
         private String name;
         private String loginName;
         private String password;
-        private String salt;
         private String createBy;
         private Date createTime;
         private String updateBy;

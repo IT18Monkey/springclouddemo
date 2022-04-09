@@ -60,9 +60,11 @@ public class GreetingController {
         return greetingService.greeting(name);
     }
     @RequestMapping("/getUserInfo")
-    public void getUserInfo(){
+    public Authentication getUserInfo(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object details = authentication.getDetails();
-        log.info("details: ",details);
+        log.info("details: {}",details);
+        return authentication;
     }
+
 }

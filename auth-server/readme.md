@@ -12,7 +12,9 @@
    * 指定令牌管理服务，tokenService()
    * 指定token转换器 jwtAccessTokenConverter()
    * token添加额外信息 JwtTokenEnhancer
-2. gateway全局过滤器，解析header中jwt鉴权。
-3. 资源服务通过解析jwt，调用auth-server获取用户认证用户信息 ，配置项：security.oauth2.resource.user-info-uri
-
+2. gateway 鉴权校验
+   * ResourceServerConfig 设置全局过滤器OAuth2AuthenticationProcessingFilter，验证token是否过期
+   * 添加url白名单机制
+   * 将解析的用户信息放入header中
+3. 资源服务 无需解析token，直接由gateway解析用户信息放入header中
 ![img.png](img.png)
